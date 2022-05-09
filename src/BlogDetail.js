@@ -32,7 +32,7 @@ const BlogDetail = () => {
     }).catch((e) => {
       console.log(e);
     })
-  },[id])
+  },[id,API])
 
   const editBlog = (blog) => {
     navigate('/editBlog/'+blog._id);

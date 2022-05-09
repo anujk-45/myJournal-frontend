@@ -36,7 +36,7 @@ const EditBlog = () => {
     }).catch((e) => {
       console.log(e);
     })
-  }, [id, token]);
+  }, [id, token, API]);
 
   const handleSubmit = (e) => {
     e.preventDefault();
