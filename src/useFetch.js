@@ -6,27 +6,25 @@ const useFetch = ({url, flag}) => {
   const [data, setData] = useState(null);
   useEffect(()=> {
     console.log("Inside useEffect");
-    setTimeout(() => {
-      fetch(url, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          'flag':flag
-        } 
-      }).then((response) => {
-        setIsPending(false)
-        if(!response.ok){
-          throw new Error('Unable to fetch blogs')
-        }
-        return response.json()
-      }).then((result) => {
-        // console.log("Blog list",result)
-        setData(result)
-      }).catch((e) => {
-        setErr(e);
-        console.log(e);
-      })
-    }, 1000);
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        'flag':flag
+      } 
+    }).then((response) => {
+      setIsPending(false)
+      if(!response.ok){
+        throw new Error('Unable to fetch blogs')
+      }
+      return response.json()
+    }).then((result) => {
+      // console.log("Blog list",result)
+      setData(result)
+    }).catch((e) => {
+      setErr(e);
+      console.log(e);
+    })
   },[url, flag]);
 
   return {data, isPending, err};
