@@ -9,6 +9,7 @@ const useFetch = ({url, flag}) => {
     setTimeout(() => {
       fetch(url, {
         method: 'GET',
+        mode: 'cors',
         headers: {
           'Content-Type': 'application/json',
           'flag':flag
