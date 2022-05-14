@@ -1,10 +1,35 @@
+import { useEffect, useState } from 'react';
 import Bloglist from './Bloglist';
-import useFetch from "./useFetch";
+
 const Home = () => {
   const API = process.env.REACT_APP_API || 'http://localhost:5000/';
   const url = `${API}blogs`;
-  const flag = '0';
-  const {data: blogs, isPending, error} = useFetch({ url, flag });
+  // const {data: blogs, isPending, error} = useFetch({ url, flag });
+  const [isPending, setIsPending] = useState(true);
+  const [error, setError] = useState(null);
+  const [blogs, setBlogs] = useState([]);
+
+  useEffect(()=> {
+    console.log("Inside useEffect");
+    fetch(url, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json'
+      } 
+    }).then((response) => {
+      setIsPending(false)
+      if(!response.ok){
+        throw new Error('Unable to fetch blogs')
+      }
+      return response.json()
+    }).then((result) => {
+      // console.log("Blog list",result)
+      setBlogs(result)
+    }).catch((e) => {
+      setError(e);
+      console.log(e);
+    })
+  },[url]);
 
   return (
     <div className="home">
