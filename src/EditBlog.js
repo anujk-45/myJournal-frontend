@@ -16,13 +16,15 @@ const EditBlog = () => {
   const navigate = useNavigate();
   
   useEffect(()=> {
-    fetch(`${API}/blogs/edit/`+id, {
+    console.log("Insider edit blog useEffect");
+    fetch(`${API}blogs/edit/`+id, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
         'Authorization': `Bearer ${token}`
       }
     }).then((response) => {
+      // console.log(response);
       if(!response.ok){
         throw new Error('Unable to fetch blog');
       }
