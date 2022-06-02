@@ -9,7 +9,7 @@ const Bloglist = ({ blogs}) => {
             <Link to={`/blogs/${blog._id}`}>
               <h2>{ blog.title }</h2>
               <p>{blog.description}</p>
-              <p>👁 {blog.views}</p>
+              {/* <p>👁 {blog.views}</p> */}
               <p>{blog.createdAt.toString().substring(0,10)}</p>
             </Link>
           </div>

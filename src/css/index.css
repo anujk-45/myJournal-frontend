@@ -93,6 +93,10 @@
   margin-bottom: 1rem;
 }
 
+.blog-details .markdown {
+  margin-bottom: 2rem;
+}
+
 .blog-details .markdown > * {
   margin-bottom: 1rem;
 }
@@ -116,6 +120,7 @@
 .blog-details img:hover {
   box-shadow: 0 0 2px 1px rgba(241, 53,109, 0.5);
 }
+
 /* create new blog form */
 .create {
   max-width: 750px;
@@ -152,4 +157,58 @@
   padding: 8px;
   border-radius: 8px;
   cursor: pointer;
+}
+
+.comment-section .comment-form {
+  /* display: none; */
+}
+
+.comment-section .comment-form label{
+  display: block;
+  text-align: left;
+}
+
+.comment-section .comment-form input,
+.comment-section .comment-form textarea {
+  width: 100%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  border: 1px solid #ddd;
+  box-sizing: border-box;
+  display: block;
+}
+
+.comment-section .comment-form button {
+  margin-left: 0;
+  margin-right: 1rem;
+}
+
+.comment-section .hidden-comment-form {
+  display: none;
+}
+
+.comment-preview {
+  margin-bottom: 1rem;
+  border-bottom: 0.08rem dotted #ddd;
+}
+
+.comment-line1 h4 {
+  display: inline;
+  float: left;
+  width: 50%;
+}
+
+.comment-line p {
+  display: inline-block;
+  float: right;
+  margin-left: 1rem;
+}
+
+#comment-comment {
+  margin-bottom: 1rem;
+}
+
+#blog-details-button {
+  margin-left: 0;
+  margin-right: 1rem;
 }

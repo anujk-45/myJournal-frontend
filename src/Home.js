@@ -34,8 +34,8 @@ const Home = () => {
   return (
     <div className="home">
       {error && <div>{error}</div>}
-      { isPending && <div>Loading...</div> }
       {blogs && <h1>Hello World👋, I'm Anuj</h1>}
+      { isPending && <div>Loading...</div> }
       {/* {blogs && <h2>Most Popular Blogs</h2>} */}
       {blogs && <Bloglist blogs = {blogs}/>}
     </div>
